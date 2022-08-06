@@ -20,8 +20,6 @@ const RestaurantList = (props) => {
           },
         })
         .then((response) => {
-          console.log(response.data);
-          console.log("We are in .then");
           // Response data is a nested JS object
 
           setRestaurantsData(response.data);
@@ -37,8 +35,8 @@ const RestaurantList = (props) => {
       <section>
         <SearchForm getRestaurants = {fetchRestaurants}></SearchForm>
         {restaurantsData.map((item) => 
-          <Restaurant key={item.id} name={item.name} address={item.address}
-          slots = {item.available_slots} timeChosen={timeChosen}
+          <Restaurant key={item.id} name={item.name} address={item.address} location = {item.location} restaurant_id = {item.id}
+          slots = {item.available_slots} timeChosen={timeChosen} toggleConfirmPage = {props.toggleConfirmPage}
           />
         )}
       </section>
