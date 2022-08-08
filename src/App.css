@@ -1,0 +1,38 @@
+.search-bar-elems {
+    display:inline-block;
+    
+}
+.search-panel-container {
+background-color: aqua;
+margin-bottom: 40vh;
+position: fixed;
+left: 35%;
+top: 20%;
+}
+
+.restaurant-item {
+display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 150px;
+  margin: 20px;
+  left: 50px;
+  position: relative;
+  bottom: 50px;
+}
+
+.rest-container {
+display: grid;
+background-color: aquamarine;
+grid-template-columns: 1fr 1fr 1fr;
+gap: 15px;
+  /* grid-auto-rows: minmax(285px, auto); */
+  margin-top: 70vh;
+}
+
+
+
+
+
+

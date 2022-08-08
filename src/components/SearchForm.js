@@ -1,13 +1,17 @@
 import { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import Restaurant from './Restaurant';
-
+import DateTimePicker from "react-datetime-picker";
+import "../App.css";
 
 
 const SearchForm = (props) => {
     const [cityName, setCityName] = useState('Seattle');
-    const [date, setDate] = useState(new Date());
+    const [myDate, setDate] = useState(new Date());
+    
+    
+    // const [startDate, setStartDate] = useState(new Date());
+
 
     let currentdate = new Date(); 
     let time = (currentdate.getHours()+1).toString()
@@ -21,28 +25,34 @@ const SearchForm = (props) => {
     const renameCity = (changeEvent) => {
       setCityName(changeEvent.target.value);
     };
+  
 
     const chooseTime = (event) => {
       setTimeChosen(event.target.value);
     };
+
   
     const handleSubmit = (event) => {
       event.preventDefault();
-      props.getRestaurants(cityName, date, timeChosen)
+      props.getRestaurants(cityName, myDate, timeChosen)
     }
   
   
 
-  return (<div>
+  return (
+
+  <div className = "search-panel-container">
     <form onSubmit = {handleSubmit}>
-        <Calendar onChange={setDate} value={date} />
-      <p>
+      <section className='search-bar-elems'>
+    <DateTimePicker type="button" clearIcon={null} format='yyyy-MM-dd' value = {myDate}  minDate={new Date()} selected={myDate} onChange={(myDate) => setDate(myDate)} shouldCloseOnSelect={false}/>
+      {/* <p>
         <span>Selected Date:</span>{' '}
-        {date.toDateString()}
-      </p>
-      <div>
-          <label> Reservation Time </label>
-          <select className="options" onChange={chooseTime}
+        {myDate.toDateString()}
+      </p> */}
+      </section>
+      <section className='search-bar-elems'>
+          {/* <label> Reservation Time </label> */}
+          <select onChange={chooseTime} type="button" 
           defaultValue={timeChosen}>
             <option value="10">10:00</option>
             <option value="11">11:00</option>
@@ -57,15 +67,12 @@ const SearchForm = (props) => {
             <option value="20">20:00</option>
             <option value="21">21:00</option>
           </select>
-        </div>
-        <section>
-            <h2>{cityName}</h2>
-            <input type="text" value={cityName} onChange={renameCity} />
         </section>
-        <div></div>
-        <input type = "submit" value = "Submit" />
+        <section className='search-bar-elems'>
+            <input type="text" value={cityName} onChange={renameCity} />
+        <input type = "submit" value = "Go" />
+        </section>
         </form>
-
       </div>
   );
 }

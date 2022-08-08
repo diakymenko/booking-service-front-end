@@ -1,9 +1,8 @@
 import React from 'react';
 import BookingConfirm from "./BookingConfirm.js";
-import {Routes, Route, useNavigate} from 'react-router-dom';
-import {createRoot} from 'react-dom/client';
-import {BrowserRouter as Router} from 'react-router-dom';
 import { useState } from "react";
+import "../App.css";
+import pic from "../test_image.jpeg";
 
 
 
@@ -23,22 +22,26 @@ const Restaurant =(props) => {
     const [hours, minutes, seconds] = timeSlot.split(':')
     if (hours >= props.timeChosen) {
     return (
-    <button onClick={toggleConfirmPage}>{hours}:{minutes} </button> 
+      <button onClick={toggleConfirmPage}>{hours}:{minutes} </button> 
     )
   }
   })
   return (
-    <div>
+
+    <div className='restaurant-item'>
       <h1>{props.name}</h1>
-      <h2>{props.address}</h2>
+      <img src={pic} alt="fffff"/>
+      <p>{props.address}</p>
       <div>{props.location}</div>
+      <p>Ratings</p>
       <div>{displaySlots} </div>
       {isFormVisible ? (
-              <BookingConfirm restaurant_id = {props.restaurant_id} time = {timeButtonValue} name = {props.name}></BookingConfirm>) : (
+              <BookingConfirm day = {props.day} location = {props.location} restaurant_id = {props.restaurant_id} time = {timeButtonValue} name = {props.name}></BookingConfirm>) : (
                 ""
               )}
-      </div>
+              </div>
+  
   )}
       
 
-export default Restaurant
+export default Restaurant;
