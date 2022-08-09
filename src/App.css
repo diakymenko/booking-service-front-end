@@ -2,37 +2,50 @@
     display:inline-block;
     
 }
-.search-panel-container {
-background-color: aqua;
-margin-bottom: 40vh;
-position: fixed;
-left: 35%;
-top: 20%;
+.search-bar-container {
+margin-top: 10%;
 }
 
+.search-bar-wrapper {
+    background-color: antiquewhite;
+    position:sticky;
+    width: 100%;
+    text-align: center;
+    height: 500px;
+    padding-top: 4vh; 
+  }
+
 .restaurant-item {
+margin-top: 10vh;
 display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 150px;
-  margin: 20px;
+  width: 300px;
+  /* margin: 20px; */
   left: 50px;
   position: relative;
   bottom: 50px;
+  border-style: dashed;
 }
 
 .rest-container {
 display: grid;
-background-color: aquamarine;
+background-color:azure;
 grid-template-columns: 1fr 1fr 1fr;
 gap: 15px;
-  /* grid-auto-rows: minmax(285px, auto); */
-  margin-top: 70vh;
+padding-left: 20vh;
 }
 
+img {
+    height: 200px;
+    width: auto;
+}
 
-
-
+.confirm-form-container {
+  background-color: blue;
+  display: flex;
+  align-items: baseline;
+}
 
 

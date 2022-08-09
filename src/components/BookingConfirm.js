@@ -49,6 +49,7 @@ const BookingConfirm =(props) => {
     <div className='row'>
     <form onSubmit={submitNewReservation}>
       <p>Reservation for {props.name} at {props.time} with #id {props.restaurant_id}</p>
+      <p>{props.address}, {props.location}</p>
         <label htmlFor="firstName">First name</label>
         <input type="text" name="firstName" value={reservation.firstName} onChange={onFormChange}></input>
         <br></br>

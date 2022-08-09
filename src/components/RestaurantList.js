@@ -23,27 +23,27 @@ const RestaurantList = (props) => {
           },
         })
         .then((response) => {
-          // Response data is a nested JS object
 
           setRestaurantsData(response.data);
         })
         .catch((err) => {
-          console.log(err);
+          alert(err.response.data.details);
         });
       }
     
     // useEffect(fetchRestaurants, []);
 
     return (
-      <section className="rest-container">
+      <section>
         <SearchForm getRestaurants = {fetchRestaurants}></SearchForm>
+        <div className="rest-container">
         {restaurantsData.map((item) =>
           <Restaurant key={item.id} name={item.name} address={item.address} location = {item.location} restaurant_id = {item.id}
           slots = {item.available_slots} timeChosen={timeChosen} toggleConfirmPage = {props.toggleConfirmPage} day = {dayChosen}
           />
         )}
+        </div>
       </section>
-    
     )
     }
   

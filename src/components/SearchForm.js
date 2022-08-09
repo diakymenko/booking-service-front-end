@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import DateTimePicker from "react-datetime-picker";
@@ -8,19 +8,22 @@ import "../App.css";
 const SearchForm = (props) => {
     const [cityName, setCityName] = useState('Seattle');
     const [myDate, setDate] = useState(new Date());
-    
-    
-    // const [startDate, setStartDate] = useState(new Date());
-
 
     let currentdate = new Date(); 
-    let time = (currentdate.getHours()+1).toString()
-    if (time < 10 || time > 21) {
-      time = 10;
+
+    let currentTime = (currentdate.getHours()+1).toString()
+    if (currentdate.getHours()+1 > 21) {
+      currentTime = 10;
     }
+    const [timeChosen, setTimeChosen] = useState(currentTime);
 
-    const [timeChosen, setTimeChosen] = useState(time);
+    console.log(timeChosen)
 
+
+
+
+
+   
 
     const renameCity = (changeEvent) => {
       setCityName(changeEvent.target.value);
@@ -41,7 +44,10 @@ const SearchForm = (props) => {
 
   return (
 
-  <div className = "search-panel-container">
+  <div className = "search-bar-wrapper">
+
+  <div className = "search-bar-container">
+    <h1>Find your table for any occasion</h1>
     <form onSubmit = {handleSubmit}>
       <section className='search-bar-elems'>
     <DateTimePicker type="button" clearIcon={null} format='yyyy-MM-dd' value = {myDate}  minDate={new Date()} selected={myDate} onChange={(myDate) => setDate(myDate)} shouldCloseOnSelect={false}/>
@@ -73,6 +79,7 @@ const SearchForm = (props) => {
         <input type = "submit" value = "Go" />
         </section>
         </form>
+      </div>
       </div>
   );
 }

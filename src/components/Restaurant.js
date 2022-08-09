@@ -27,20 +27,26 @@ const Restaurant =(props) => {
   }
   })
   return (
-
+<section>
     <div className='restaurant-item'>
-      <h1>{props.name}</h1>
       <img src={pic} alt="fffff"/>
-      <p>{props.address}</p>
+      <p>{props.name}</p>
+      <p>stars, avr review</p>
+      <p>Cuisine</p>
+      {/* <p>{props.address}</p> */}
       <div>{props.location}</div>
-      <p>Ratings</p>
       <div>{displaySlots} </div>
+      </div>
+
+
+      <div className = "confirm-form-container">
       {isFormVisible ? (
-              <BookingConfirm day = {props.day} location = {props.location} restaurant_id = {props.restaurant_id} time = {timeButtonValue} name = {props.name}></BookingConfirm>) : (
+              <BookingConfirm day = {props.day} address = {props.address} location = {props.location} restaurant_id = {props.restaurant_id} time = {timeButtonValue} name = {props.name}></BookingConfirm>) : (
                 ""
               )}
-              </div>
-  
+        
+        </div>
+              </section>
   )}
       
 
