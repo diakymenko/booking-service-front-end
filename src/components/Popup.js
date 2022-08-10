@@ -5,13 +5,15 @@ import axios from "axios";
 
 
 
-const BookingConfirm =(props) => {
+const Popup =(props) => {
+
   
   const defaultReservation = {
     firstName: '',
     lastName: '',
     phone: '',
   };
+
 
   const [reservation, setReservation] = useState(defaultReservation);
   
@@ -44,25 +46,28 @@ const BookingConfirm =(props) => {
         alert(error.response.data.details)
       });
 };
+
   
   return (
-    <div className='row'>
-    <form onSubmit={submitNewReservation}>
-      <p>Reservation for {props.name} at {props.time} with #id {props.restaurant_id}</p>
-      <p>{props.address}, {props.location}</p>
-        <label htmlFor="firstName">First name</label>
-        <input type="text" name="firstName" value={reservation.firstName} onChange={onFormChange}></input>
-        <br></br>
-        <label htmlFor="lastName">Last name</label>
-        <input type="text" name="lastName" value={reservation.lastName} onChange={onFormChange}></input>
-        <br></br>
-        <label htmlFor="phone">Phone number</label>
-        <input type="text" name="phone" value={reservation.phone} onChange={onFormChange}></input>
-  
-        <input type="Submit"></input>
-    </form>
+    <div className="popup-box">
+      <div className="box">
+        <span className="close-icon" onClick={props.handleClose}>x</span>
+        <form onSubmit={submitNewReservation}>
+          <p>Reservation for {props.name} at {props.time} with #id {props.restaurant_id}</p>
+          <p>{props.address}, {props.location}</p>
+            <label htmlFor="firstName">First name</label>
+            <input type="text" name="firstName" value={reservation.firstName} onChange={onFormChange}></input>
+            <br></br>
+            <label htmlFor="lastName">Last name</label>
+            <input type="text" name="lastName" value={reservation.lastName} onChange={onFormChange}></input>
+            <br></br>
+            <label htmlFor="phone">Phone number</label>
+            <input type="text" name="phone" value={reservation.phone} onChange={onFormChange}></input>
+      
+            <input type="Submit"></input>
+        </form>
+      </div>
     </div>
     )
-  
   }
-  export default BookingConfirm;
+  export default Popup;

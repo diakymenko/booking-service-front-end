@@ -1,53 +1,59 @@
-import React from 'react';
-import BookingConfirm from "./BookingConfirm.js";
-import { useState } from "react";
+import React from "react";
+import { useState, useEffect } from "react";
 import "../App.css";
 import pic from "../test_image.jpeg";
+import Popup from "./Popup";
 
-
-
-const Restaurant =(props) => {
-
-  const [isFormVisible, setIsFormVisible] = useState(false);
+const Restaurant = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
   const [timeButtonValue, setTimeButtonValue] = useState([]);
-  
-  const toggleConfirmPage = (event) => {
-  
+
+  const togglePopup = (event) => {
+    setIsOpen(!isOpen);
     setTimeButtonValue(event.target.textContent);
-    setIsFormVisible(!isFormVisible);}
-  
+  };
+
   const displaySlots = props.slots.map((item) => {
-  
-    const [date, timeSlot] = item.split(' ');
-    const [hours, minutes, seconds] = timeSlot.split(':')
+    const [date, timeSlot] = item.split(" ");
+    const [hours, minutes, seconds] = timeSlot.split(":");
     if (hours >= props.timeChosen) {
-    return (
-      <button onClick={toggleConfirmPage}>{hours}:{minutes} </button> 
-    )
-  }
-  })
+      return (
+        <button key={hours} onClick={togglePopup}>
+          {hours}:{minutes}{" "}
+        </button>
+      );
+    }
+  });
+
   return (
-<section>
-    <div className='restaurant-item'>
-      <img src={pic} alt="fffff"/>
-      <p>{props.name}</p>
-      <p>stars, avr review</p>
-      <p>Cuisine</p>
-      {/* <p>{props.address}</p> */}
-      <div>{props.location}</div>
-      <div>{displaySlots} </div>
+    <section>
+      <div className="restaurant-item">
+        <img className="restaurant-logo" src={props.yelp_data.image_url} alt={props.name} />
+        <p>{props.name}</p>
+        <img
+          src={"/images/rating/regular_" + props.yelp_data.rating + ".png"}
+          alt={props.yelp_data.rating}
+        />
+        <div>{props.yelp_data.price}</div>
+        <div>{props.location}</div>
+        <div>{displaySlots} </div>
       </div>
 
-
-      <div className = "confirm-form-container">
-      {isFormVisible ? (
-              <BookingConfirm day = {props.day} address = {props.address} location = {props.location} restaurant_id = {props.restaurant_id} time = {timeButtonValue} name = {props.name}></BookingConfirm>) : (
-                ""
-              )}
-        
-        </div>
-              </section>
-  )}
-      
+      <div className="confirm-form-container">
+        {isOpen && (
+          <Popup
+            day={props.day}
+            address={props.address}
+            location={props.location}
+            restaurant_id={props.restaurant_id}
+            time={timeButtonValue}
+            name={props.name}
+            handleClose={togglePopup}
+          />
+        )}
+      </div>
+    </section>
+  );
+};
 
 export default Restaurant;
