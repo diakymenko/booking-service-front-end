@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "../App.css";
-import pic from "../test_image.jpeg";
 import Popup from "./Popup";
 
 const Restaurant = (props) => {
@@ -18,9 +17,11 @@ const Restaurant = (props) => {
     const [hours, minutes, seconds] = timeSlot.split(":");
     if (hours >= props.timeChosen) {
       return (
-        <button key={hours} onClick={togglePopup}>
+        <div className = "timeslot-btn-container">
+        <button className = "timeslot-button" key={hours} onClick={togglePopup}>
           {hours}:{minutes}{" "}
         </button>
+        </div>
       );
     }
   });
@@ -29,13 +30,22 @@ const Restaurant = (props) => {
     <section>
       <div className="restaurant-item">
         <img className="restaurant-logo" src={props.yelp_data.image_url} alt={props.name} />
-        <p>{props.name}</p>
+        <p className = "rest-name">{props.name}</p>
+        <section className = "rating-review-container">
         <img
           src={"/images/rating/regular_" + props.yelp_data.rating + ".png"}
           alt={props.yelp_data.rating}
         />
+        <div className = "review-count">{props.yelp_data.review_count} reviews</div>
+        </section>
+        <section className="price-category-city-container">
+        <div>{props.yelp_data.categories[0].title}</div>
+        <div>•</div>
         <div>{props.yelp_data.price}</div>
+        <div>•</div>
         <div>{props.location}</div>
+        </section>
+        <div className = "book-times">☑ Booked {props.reservations_count} times</div>
         <div>{displaySlots} </div>
       </div>
 

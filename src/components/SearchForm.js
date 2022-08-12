@@ -29,12 +29,13 @@ const SearchForm = (props) => {
   };
 
   return (
+    <div>
     <div className="search-bar-wrapper">
+    <h1>Delicious starts here.</h1>
       <div className="search-bar-container">
-        <h1>Find your table for any occasion</h1>
-        <form onSubmit={handleSubmit}>
+        <form name="myform" noValidate onSubmit={handleSubmit}>
           <section className="search-bar-elems">
-            <DateTimePicker
+            <DateTimePicker id="datetime" className="react-calendar"
               type="button"
               clearIcon={null}
               format="yyyy-MM-dd"
@@ -51,7 +52,7 @@ const SearchForm = (props) => {
           </section>
           <section className="search-bar-elems">
             {/* <label> Reservation Time </label> */}
-            <select
+            <select className = "select-time"
               onChange={chooseTime}
               type="button"
               defaultValue={timeChosen}
@@ -71,11 +72,12 @@ const SearchForm = (props) => {
             </select>
           </section>
           <section className="search-bar-elems">
-            <input type="text" value={cityName} onChange={renameCity} />
-            <input type="submit" value="Go" />
+            <input className = "city-name" type="text" value={cityName} onChange={renameCity} />
+            <input id = "btn-go" type="submit" value="Let's go" />
           </section>
         </form>
       </div>
+    </div>
     </div>
   );
 };

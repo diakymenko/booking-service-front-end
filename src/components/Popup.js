@@ -63,7 +63,6 @@ const Popup =(props) => {
             <br></br>
             <label htmlFor="phone">Phone number</label>
             <input type="text" name="phone" value={reservation.phone} onChange={onFormChange}></input>
-      
             <input type="Submit"></input>
         </form>
       </div>

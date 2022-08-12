@@ -61,6 +61,7 @@ const RestaurantList = (props) => {
             address={item.address}
             location={item.location}
             restaurant_id={item.id}
+            reservations_count = {item.reservations_count}
             slots={item.available_slots}
             timeChosen={timeChosen}
             toggleConfirmPage={props.toggleConfirmPage}
