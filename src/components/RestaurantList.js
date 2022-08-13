@@ -1,6 +1,6 @@
 import Restaurant from "./Restaurant.js";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import SearchForm from "./SearchForm.js";
 
 const RestaurantList = (props) => {
@@ -8,6 +8,7 @@ const RestaurantList = (props) => {
 
   const [timeChosen, setTimeChosen] = useState([]);
   const [dayChosen, setDay] = useState([]);
+
 
   const URL = "http://127.0.0.1:5000";
   const fetchRestaurants = async (cityName, day, timeChosen) => {
@@ -22,6 +23,7 @@ const RestaurantList = (props) => {
       "-" +
       timeChosen.toString();
     const newRests = [];
+    
     let rests = await axios.get(`${URL}/restaurants/${cityName}`, {
         params: {
           date: normalizedDate,
@@ -45,8 +47,13 @@ const RestaurantList = (props) => {
           console.log(err);
         });
     }
-
     setRestaurantsData(newRests);
+    await new Promise(r => setTimeout(r, 100));
+    window.scrollTo({
+      left: 0,
+      top: window.innerHeight,
+      behavior: "smooth",
+    })
   };
 
   return (

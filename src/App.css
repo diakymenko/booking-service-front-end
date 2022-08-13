@@ -1,24 +1,15 @@
 body {
-  font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-family: BrandonText, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol;
 }
 
 h1 {
-  color:white;
-  font-size:xx-large;
+  color: white;
+  font-size: xx-large;
   padding-bottom: 0px;
 }
 
-
-.select-time {
-  font-size: larger;
-  width: 120px;
-  height: 50px;
-  border-style: solid;
-  margin-left: -4px;
-  text-align: center;
-  border-radius: 5px;
-  
-}
 
 #btn-go {
   width: 120px;
@@ -33,77 +24,85 @@ h1 {
   font-weight: bold;
   cursor: pointer;
   float: right;
- 
 }
 
-#btn-go:hover {
-  background-color:#990a0a;
+#btn-go:hover
+ {
+  background-color: #990a0a;
 }
 
 .search-bar-elems {
-    display: inline;
-    float: left;
-
+  display: inline;
+  float: left;
 }
 .search-bar-container {
-margin-top: 10%;
-background-color:#180700;
-width: 60%;
-height: 20%;
-padding-top: 6vh;
-padding-left: 6vh;
-border-radius: 7px;
-box-sizing: border-box;
-justify-content: center;
-margin: auto;
-
+  margin-top: 10%;
+  background-color: #180700;
+  width: 60%;
+  height: 20%;
+  padding-top: 6vh;
+  padding-left: 9vh;
+  border-radius: 10px;
+  box-sizing: border-box;
+  justify-content: center;
+  margin: auto;
 }
 
 .search-bar-wrapper {
-    background-color:antiquewhite;
-    background-image: url(/public/images/rating/background.jpg);
-    background-repeat: no-repeat;
-    background-size:cover;
-    position:sticky;
-    width: 100%;
-    text-align: center;
-    height: 650px;
-    padding-top: 25vh;    
-  }
+  background-color: antiquewhite;
+  background-image: url(/public/images/rating/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: sticky;
+  width: 100%;
+  text-align: center;
+  height: 650px;
+  padding-top: 25vh;
+}
 
-  .city-name {
-    font-size:large;
-    width: 150px;
-    height: 44px;
-    font-family: inherit;
-    margin-right: 5px;
-    margin-left: -4px;
-    text-align: center;
-    font-family: Helvetica,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  }
+.select-time {
+  font-size: larger;
+  width: 120px;
+  height: 50px;
+  border-style: solid;
+  margin-left: -4px;
+  text-align: center;
+}
 
+.city-name {
+  font-size: large;
+  width: 150px;
+  height: 46px;
+  font-family: inherit;
+  margin-right: 5px;
+  margin-left: -2px;
+  text-align: center;
+  border-width: 1px;
+  font-family: Helvetica, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol;
+}
 
 .restaurant-item {
-margin-top: 10vh;
-background-color: white;
-display:flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-width: 300px;
-position: relative;
-bottom: 50px;
-border-style:solid;
-border-color:rgb(220, 216, 216);
-border-radius: 10px;
+  margin-top: 10vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 307px;
+  position: relative;
+  bottom: 50px;
+  border-style: solid;
+  border-color: rgb(220, 216, 216);
+  border-radius: 10px;
 }
 
 .rest-container {
-display: grid;
-background-color:azure;
-grid-template-columns: 1fr 1fr 1fr;
-gap: 15px;
-padding-left: 15vh;
+  display: grid;
+  background-color: azure;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  padding-left: 15vh;
 }
 
 .restaurant-logo {
@@ -117,7 +116,8 @@ padding-left: 15vh;
 .rest-name {
   font-weight: bolder;
   text-align: center;
-  font-size:larger;
+  font-size: larger;
+  height:7vh;
 }
 
 .rating-review-container {
@@ -129,9 +129,8 @@ padding-left: 15vh;
 .price-category-city-container {
   display: flex;
   gap: 1vh;
-  font-weight:300;
-  font-size:medium
-
+  font-weight: 300;
+  font-size: medium;
 }
 
 .timeslot-btn-container {
@@ -139,10 +138,8 @@ padding-left: 15vh;
   padding-left: 1.1vh;
 }
 
-
-
 .timeslot-button {
-  background-color:#da3743;
+  background-color: #da3743;
   border: none;
   color: #ffffff;
   margin-top: 2vh;
@@ -151,25 +148,25 @@ padding-left: 15vh;
   width: 80px;
   border-radius: 5px;
   font-weight: bold;
-  font-size:medium;
+  font-size: medium;
   margin-bottom: 1vh;
   margin-left: 1vh;
   cursor: pointer;
 }
 
-.timeslot-button:hover{
-  background-color:#990a0a;
+.timeslot-button:hover {
+  background-color: #990a0a;
   color: white;
 }
 
 .review-count {
   font-size: small;
-  font-weight:500
+  font-weight: 500;
 }
 
 .book-times {
-  font-size:14px;
-  font-weight:500;
+  font-size: 14px;
+  font-weight: 500;
   margin-top: 1vh;
 }
 .confirm-form-container {
@@ -181,62 +178,176 @@ padding-left: 15vh;
 /* Popup style */
 .popup-box {
   position: fixed;
-  background: #00000050;
   width: 100%;
   height: 100vh;
   top: 0;
   left: 0;
   z-index: 5;
+background:rgba(55,55,55,.6);
+backdrop-filter: blur(10px);
 }
- 
+
 .box {
   position: relative;
   width: 50%;
   margin: 0 auto;
-  height: auto;
+  height:500px;
   max-height: 70vh;
   margin-top: calc(100vh - 85vh - 20px);
   background: #fff;
-  border-radius: 4px;
+  border-radius: 7px;
   padding: 20px;
-  border: 1px solid #999;
-  overflow:auto;
+  border: 0.5px solid #999;
+  overflow: auto;
 }
- 
-.close-icon {
-  content: 'x';
-  cursor: pointer;
-  position:fixed;
-  right: calc(15% - 30px);
-  top: calc(100vh - 85vh - 33px);
-  background: #ededed;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  line-height: 20px;
+
+/* inside pop-up */
+
+.reservation-address-container {
+  display: grid;
+}
+
+.img-reservation-data-container {
+  display: flex;
+}
+
+.reservation-data {
+  padding-bottom: 0;
+  margin-top: 2vh;
+  margin-left: 3vh;
+  
+}
+
+#rest-name {
+  font-weight: 700;
+  font-size: large;
+  padding-bottom: 2vh;
+  padding-top: 2vh;
+}
+
+#rest-date {
+padding-bottom: 1vh;
+font-weight: 300;
+}
+
+#rest-time  {
+  padding-bottom: 1vh;
+  font-weight: 300;
+} 
+
+
+.pop-up-rest-img {
+  margin-top: 3vh;
+  width: 15vw;
+  height: 22vh;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-left: 3vh;
+  margin-bottom: 1vh;
+}
+
+.address-location {
+  margin-left: 3vh;
+  margin-top: 0vh;
+  font-weight: 300;
+} 
+
+#pop-box-email, #pop-box-phone,
+ #pop-box-last-name, #pop-box-first-name {
+  width: 40vh;
+  margin-top: 3vh;
+  margin-bottom: 1vh;
+  height: 5vh;
+  font-size:medium;
+  font-weight: 100;
+  margin-left: 3vh;
+}
+/* 
+.last-name-error-container {
+  display: flex;
+  float: left;
+} */
+
+
+.first-name-error-container, .last-name-error-container, .phone-error-container,
+.email-error-container {
+  display: grid;
+}
+
+.pop-up-label-container {
+display: flex;
+flex-wrap: wrap;
+margin-left: 5vh; 
+}
+
+/* vaildation of user input in pop-up form */
+
+#first-name-error, #last-name-error, #phone-error, #email-error {
+  color: #9e0b0b;
+  font-size: smaller;
+  margin-left: 3vh;
+}
+.invalid {
+  border-color: #d10000;
+}
+
+
+.popup-submit-btn {
+  width: 350px;
+  height: 50px;
+  margin-top: 10vh;
+  margin-left: 28vh;
   text-align: center;
-  border: 1px solid #999;
-  font-size: 20px;
+  background-color: #da3743;
+  border-radius: 7px;
+  font-size: medium;
+  border: 0;
+  font-family: inherit;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
+
+.popup-submit-btn:hover {
+  background-color: #990a0a;
+}
+
+.close-icon {
+  content: "x";
+  font-weight:200;
+  cursor: pointer;
+  position: fixed;
+  right: calc(28% - 30px);
+  top: calc(100vh - 83vh - 10px);
+  width: 40px;
+  height: 42px;
+  text-align: center;
+  font-size: 35px;
+}
+
+.close-icon:hover {
+  opacity:0.3;
+}
+
 
 /* calendar */
 
 .react-calendar {
-
   display: block;
-  background:white;
+  background: white;
   width: 350px;
   height: 50px;
-  border-style:none;
-  border-color: white;
-  border-width: 0px;
+  /* border-width: 0px; */
   font-size: 1.3rem;
   text-align: center;
-  border-radius: 5px;
-  font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  border-width: 0.5px;
+ 
+  font-family: BrandonText, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol;
 }
 
- .react-calendar button {
+.react-calendar button {
   margin: 0;
   border: 0;
 }
@@ -255,11 +366,13 @@ padding-left: 15vh;
 
 .react-calendar__month-view__weekdays {
   text-align: center;
-  text-transform:none;
+  text-transform: none;
   background-color: white;
-  font-weight:300;
-  font-size:medium;
-  font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 300;
+  font-size: medium;
+  font-family: BrandonText, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol;
 }
 .react-calendar__month-view__weekdays__weekday {
   padding: 0em;
@@ -269,10 +382,13 @@ padding-left: 15vh;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-family: BrandonText, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol;
 }
 .react-calendar__month-view__days__day--weekend {
-  color: #d10000; }
+  color: #d10000;
+}
 
 .react-calendar__month-view__days__day--neighboringMonth {
   color: #757575;
@@ -291,12 +407,11 @@ padding-left: 15vh;
   font-size: medium;
   line-height: 20px;
   margin: 1px;
-  background-color:#ffffff;
+  background-color: #ffffff;
   border: 0;
-  color:black;
+  color: black;
   padding: 3px 1;
-} 
-
+}
 
 .react-calendar__tile:disabled {
   background-color: #f0f0f0;
@@ -306,7 +421,7 @@ padding-left: 15vh;
   background-color: #e6e6e6;
 }
 .react-calendar__tile--now {
-  background:#f3b1b1;
+  background: #f3b1b1;
 }
 .react-calendar__tile--now:enabled:hover,
 .react-calendar__tile--now:enabled:focus {
@@ -326,4 +441,4 @@ padding-left: 15vh;
 .react-calendar__tile--active:enabled:hover,
 .react-calendar__tile--active:enabled:focus {
   background: #1087ff;
-} 
+}
