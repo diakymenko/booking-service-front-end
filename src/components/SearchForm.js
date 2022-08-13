@@ -4,7 +4,7 @@ import DateTimePicker from "react-datetime-picker";
 import "../App.css";
 
 const SearchForm = (props) => {
-  const [cityName, setCityName] = useState("Bellevue");
+  const [cityName, setCityName] = useState("Seattle");
   const [myDate, setDate] = useState(new Date());
 
   let currentdate = new Date();

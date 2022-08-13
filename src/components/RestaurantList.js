@@ -1,6 +1,6 @@
 import Restaurant from "./Restaurant.js";
 import axios from "axios";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import SearchForm from "./SearchForm.js";
 
 const RestaurantList = (props) => {
@@ -8,7 +8,6 @@ const RestaurantList = (props) => {
 
   const [timeChosen, setTimeChosen] = useState([]);
   const [dayChosen, setDay] = useState([]);
-
 
   const URL = "http://127.0.0.1:5000";
   const fetchRestaurants = async (cityName, day, timeChosen) => {
@@ -23,8 +22,9 @@ const RestaurantList = (props) => {
       "-" +
       timeChosen.toString();
     const newRests = [];
-    
-    let rests = await axios.get(`${URL}/restaurants/${cityName}`, {
+
+    let rests = await axios
+      .get(`${URL}/restaurants/${cityName}`, {
         params: {
           date: normalizedDate,
         },
@@ -48,12 +48,12 @@ const RestaurantList = (props) => {
         });
     }
     setRestaurantsData(newRests);
-    await new Promise(r => setTimeout(r, 100));
+    await new Promise((r) => setTimeout(r, 100));
     window.scrollTo({
       left: 0,
       top: window.innerHeight,
       behavior: "smooth",
-    })
+    });
   };
 
   return (
@@ -68,7 +68,7 @@ const RestaurantList = (props) => {
             address={item.address}
             location={item.location}
             restaurant_id={item.id}
-            reservations_count = {item.reservations_count}
+            reservations_count={item.reservations_count}
             slots={item.available_slots}
             timeChosen={timeChosen}
             toggleConfirmPage={props.toggleConfirmPage}
