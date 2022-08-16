@@ -9,7 +9,7 @@ const RestaurantList = (props) => {
   const [timeChosen, setTimeChosen] = useState([]);
   const [dayChosen, setDay] = useState([]);
 
-  const URL = "http://127.0.0.1:5000";
+  const URL = "http://35.88.133.158:8080";
   const fetchRestaurants = async (cityName, day, timeChosen) => {
     setTimeChosen(timeChosen);
     setDay(day);
@@ -73,6 +73,7 @@ const RestaurantList = (props) => {
             timeChosen={timeChosen}
             toggleConfirmPage={props.toggleConfirmPage}
             day={dayChosen}
+            getRestaurants={props.getRestaurants}
           />
         ))}
       </div>

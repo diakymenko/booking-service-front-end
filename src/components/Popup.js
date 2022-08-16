@@ -39,11 +39,12 @@ const Popup = (props) => {
             day={props.day}
             time={props.time}
             handler={handleBooking}
+            getRestaurants={props.getRestaurants}
           ></ReservationInput>
         )}
         {!showInput && (
           <ReservationConfirmation
-          handleClose={props.handleClose}
+            handleClose={props.handleClose}
             success={bookingResult.success}
             message={bookingResult.message}
           />

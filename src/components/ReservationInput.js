@@ -12,6 +12,7 @@ const ReservationInput = (props) => {
 
   const [reservation, setReservation] = useState(defaultReservation);
   const [errors, setErrors] = useState({});
+  const [errorVisible, setErrorVisible] = useState(false);
 
   const validateForm = () => {
     const newErrors = {};
@@ -19,6 +20,7 @@ const ReservationInput = (props) => {
     if (!reservation.firstName) {
       newErrors.firstName = "First name is required.";
       isFormValid = false;
+      setErrorVisible(true);
     }
     if (!reservation.lastName) {
       newErrors.lastName = "Last name is required.";
@@ -43,10 +45,15 @@ const ReservationInput = (props) => {
     const newFormData = { ...reservation };
     newFormData[stateName] = inputValue;
 
+    const newErrors = { ...errors };
+    //console.log(newErrors, stateName);
+    delete newErrors[stateName];
+    setErrors(newErrors);
+
     setReservation(newFormData);
   };
 
-  const URL = "http://127.0.0.1:5000";
+  const URL = "http://35.88.133.158:8080";
   const submitNewReservation = (event) => {
     event.preventDefault();
 
@@ -76,8 +83,7 @@ const ReservationInput = (props) => {
   };
 
   return (
-    
-      <form onSubmit={submitNewReservation}>
+    <form onSubmit={submitNewReservation}>
       <div className="pop-up-label-container">
         <section className="first-name-error-container">
           <label htmlFor="firstName"></label>
@@ -89,7 +95,14 @@ const ReservationInput = (props) => {
             value={reservation.firstName}
             onChange={onFormChange}
           ></input>
-          <div id="first-name-error">{errors.firstName}</div>
+          <div>
+            {" "}
+            {errorVisible === true ? (
+              <div id="first-name-error">{errors.firstName}</div>
+            ) : (
+              ""
+            )}
+          </div>
         </section>
         <section className="last-name-error-container">
           <label htmlFor="lastName"></label>
@@ -132,8 +145,8 @@ const ReservationInput = (props) => {
           type="Submit"
           value="Complete reservation"
         ></input>
-    </div>
-     </form>
+      </div>
+    </form>
   );
 };
 
