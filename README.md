@@ -2,7 +2,7 @@
 
 An online platform enabling customers to search and book restaurant tables based on their location and available time slots. The service provides real-time availability and restaurant recommendations.
 
-**Tech Stack:** Python, Flask, PostgreSQL, SQLAlchemy, ReactJS, Docker, AWS (ECS, RDS, PostgreSQL)
+**Tech Stack for FE:** ReactJS, Docker, AWS (ECS, RDS, PostgreSQL)
 
 **GitHub:** [Frontend](https://github.com/diakymenko/booking-service-front-end) | [Backend](https://github.com/diakymenko/table_booking_service) | [Demo](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1e7a5db5-140e-4388-b862-aef501636909)
 
